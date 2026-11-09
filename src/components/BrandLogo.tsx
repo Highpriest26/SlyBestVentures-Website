@@ -10,42 +10,33 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({ variant = 'light', size = 
   const { logoUrl } = SITE_CONFIG.brand;
   const isLightText = variant === 'light';
 
-  if (logoUrl) {
-    return (
-      <div className="inline-flex items-center gap-3">
-        <img
-          src={logoUrl}
-          alt={SITE_CONFIG.business.name}
-          className={size === 'lg' ? 'h-12 w-auto' : size === 'sm' ? 'h-8 w-auto' : 'h-10 w-auto'}
-        />
-      </div>
-    );
-  }
-
   const boxSize =
-    size === 'lg' ? 'w-10 h-10 text-lg' : size === 'sm' ? 'w-7 h-7 text-sm' : 'w-8 h-8 text-base';
+    size === 'lg' ? 'w-11 h-11' : size === 'sm' ? 'w-8 h-8' : 'w-9 h-9 sm:w-10 sm:h-10';
 
   return (
-    <div className="inline-flex items-center gap-2.5 group">
-      {/* Architectural Cobalt Brand Mark with rounded-md */}
+    <div className="inline-flex items-center gap-2.5 sm:gap-3 group">
+      {/* Official Slybest Global Hub Orbital Emblem */}
       <div
-        className={`${boxSize} bg-brand-cobalt text-white font-black flex items-center justify-center rounded-md shadow-xs shrink-0 transition-transform duration-300 group-hover:scale-105`}
-        aria-hidden="true"
+        className={`${boxSize} bg-black rounded-md border border-brand-amber/35 flex items-center justify-center overflow-hidden shadow-xs shrink-0 transition-transform duration-300 group-hover:scale-105`}
       >
-        S
+        <img
+          src={logoUrl || '/logo-mark.png'}
+          alt={`${SITE_CONFIG.business.name} Logo`}
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div className="flex items-baseline gap-2 leading-none">
+      <div className="flex flex-col leading-none">
         <span
           className={`font-display font-black uppercase tracking-tight ${
-            size === 'lg' ? 'text-2xl' : size === 'sm' ? 'text-lg' : 'text-xl'
+            size === 'lg' ? 'text-xl sm:text-2xl' : size === 'sm' ? 'text-base' : 'text-lg sm:text-xl'
           } ${isLightText ? 'text-white' : 'text-brand-midnight'}`}
         >
           SLYBEST
         </span>
         <span
-          className={`font-mono text-[10px] tracking-[0.18em] uppercase font-bold hidden sm:inline-block ${
-            isLightText ? 'text-brand-cyan' : 'text-brand-cobalt'
+          className={`font-mono text-[9px] sm:text-[10px] tracking-[0.18em] uppercase font-bold mt-0.5 ${
+            isLightText ? 'text-brand-amber' : 'text-brand-cobalt'
           }`}
         >
           GLOBAL HUBS

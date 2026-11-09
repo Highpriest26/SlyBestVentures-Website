@@ -78,7 +78,7 @@ export const SITE_CONFIG = {
     conceptIdea:
       'Present Slybest as the organised bridge between Nigerian buyers, Chinese suppliers, shipping partners, and final delivery.',
     storySequence: ['Source', 'Coordinate', 'Ship', 'Deliver'],
-    logoUrl: '', // Populate with official logo path when supplied by client
+    logoUrl: '/logo-mark.png',
   },
 
   contacts: {
