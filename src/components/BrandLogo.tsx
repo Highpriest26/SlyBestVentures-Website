@@ -15,9 +15,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({ variant = 'light', size = 
 
   return (
     <div className="inline-flex items-center gap-2.5 sm:gap-3 group">
-      {/* Official Slybest Global Hub Orbital Emblem */}
+      {/* Official Slybest Ventures Global Hubs SV Emblem (rounded-md) */}
       <div
-        className={`${boxSize} bg-black rounded-md border border-brand-amber/35 flex items-center justify-center overflow-hidden shadow-xs shrink-0 transition-transform duration-300 group-hover:scale-105`}
+        className={`${boxSize} rounded-md border border-white/25 flex items-center justify-center overflow-hidden shadow-xs shrink-0 transition-transform duration-300 group-hover:scale-105`}
       >
         <img
           src={logoUrl || '/logo-mark.png'}
@@ -32,11 +32,11 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({ variant = 'light', size = 
             size === 'lg' ? 'text-xl sm:text-2xl' : size === 'sm' ? 'text-base' : 'text-lg sm:text-xl'
           } ${isLightText ? 'text-white' : 'text-brand-midnight'}`}
         >
-          SLYBEST
+          SLYBEST VENTURES
         </span>
         <span
           className={`font-mono text-[9px] sm:text-[10px] tracking-[0.18em] uppercase font-bold mt-0.5 ${
-            isLightText ? 'text-brand-amber' : 'text-brand-cobalt'
+            isLightText ? 'text-brand-cyan' : 'text-brand-cobalt'
           }`}
         >
           GLOBAL HUBS
