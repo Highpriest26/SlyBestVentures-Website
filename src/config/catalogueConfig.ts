@@ -44,15 +44,15 @@ export interface CatalogueItem {
  */
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
-    id: 'vehicles-auto-parts',
-    name: 'Vehicles and Auto Parts',
-    icon: 'car',
+    id: 'tvs-home-appliances',
+    name: 'TVs and Home Appliances',
+    icon: 'tv',
     shortDescription:
-      'SUVs, sedans, EVs, commercial vans, tyres, and OEM spare parts direct from China.',
-    exampleItems: ['Passenger & Commercial Vehicles', 'Engine & Suspension Parts', 'Body Kits & Auto Lighting', 'Tyres & Workshop Tools'],
-    typicalBuyers: 'Auto dealers, fleet operators, spare parts distributors, and individual buyers',
-    freightRecommendation: 'Sea or Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+      'Smart 4K/8K LED & QLED TVs, split air conditioners, cookers, and modern kitchen gear.',
+    exampleItems: ['Smart 4K / UHD Televisions', 'Split & Standing Air Conditioners', 'Gas & Electric Cookers', 'Kitchen Appliances'],
+    typicalBuyers: 'Alaba & nationwide electronics dealers, developers, and homeowners',
+    freightRecommendation: 'Sea freight',
+    imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=80',
     featured: true,
   },
   {
@@ -68,18 +68,6 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     featured: true,
   },
   {
-    id: 'tvs-home-appliances',
-    name: 'TVs and Home Appliances',
-    icon: 'tv',
-    shortDescription:
-      'Smart 4K/8K LED & QLED TVs, split air conditioners, cookers, and modern kitchen gear.',
-    exampleItems: ['Smart 4K / UHD Televisions', 'Split & Standing Air Conditioners', 'Gas & Electric Cookers', 'Kitchen Appliances'],
-    typicalBuyers: 'Alaba & nationwide electronics dealers, developers, and homeowners',
-    freightRecommendation: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=80',
-    featured: true,
-  },
-  {
     id: 'inverters-batteries',
     name: 'Inverters and Batteries',
     icon: 'battery',
@@ -89,6 +77,18 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     typicalBuyers: 'Renewable energy installers, corporate offices, and wholesale distributors',
     freightRecommendation: 'Sea freight',
     imageUrl: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=900&q=80',
+    featured: true,
+  },
+  {
+    id: 'speakers-sound-systems',
+    name: 'Speakers and Sound Systems',
+    icon: 'speaker',
+    shortDescription:
+      'Home theatres, professional PA line arrays, trolley speakers, and amplifiers.',
+    exampleItems: ['Home Theatre & Soundbars', 'Portable Trolley Speakers', 'Professional PA & Line Arrays', 'Power Amplifiers'],
+    typicalBuyers: 'Audio equipment dealers, event centres, churches, and retail buyers',
+    freightRecommendation: 'Sea or Air freight',
+    imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
     featured: true,
   },
   {
@@ -104,16 +104,27 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     featured: true,
   },
   {
-    id: 'led-displays-advertising',
-    name: 'LED Displays and Digital Advertising Screens',
-    icon: 'display',
+    id: 'vehicles-auto-parts',
+    name: 'Vehicles and Auto Parts',
+    icon: 'car',
     shortDescription:
-      'Indoor and outdoor LED video walls, stage screens, and digital signage kiosks.',
-    exampleItems: ['Outdoor Waterproof LED Billboards', 'Indoor Fine-Pitch Video Walls', 'Digital Kiosks', 'LED Controllers'],
-    typicalBuyers: 'Advertising agencies, event venues, churches, and retail chains',
+      'SUVs, sedans, EVs, commercial vans, tyres, and OEM spare parts direct from China.',
+    exampleItems: ['Passenger & Commercial Vehicles', 'Engine & Suspension Parts', 'Body Kits & Auto Lighting', 'Tyres & Workshop Tools'],
+    typicalBuyers: 'Auto dealers, fleet operators, spare parts distributors, and individual buyers',
     freightRecommendation: 'Sea or Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
     featured: true,
+  },
+  {
+    id: 'electronics-gadgets',
+    name: 'Electronics and Gadgets',
+    icon: 'smartphone',
+    shortDescription:
+      'Power banks, smartwatches, tablets, audio buds, and high-turnover mobile accessories.',
+    exampleItems: ['Power Banks & Charging Stations', 'Smartwatches & Audio Buds', 'Tablets & Accessories', 'Phone Accessories'],
+    typicalBuyers: 'Tech retailers, gadget wholesalers, and corporate buyers',
+    freightRecommendation: 'Air freight',
+    imageUrl: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'washing-machines',
@@ -138,15 +149,15 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     imageUrl: 'https://images.unsplash.com/photo-1618941716939-553df3c6c278?auto=format&fit=crop&w=900&q=80',
   },
   {
-    id: 'speakers-sound-systems',
-    name: 'Speakers and Sound Systems',
-    icon: 'speaker',
+    id: 'led-displays-advertising',
+    name: 'LED Displays and Digital Advertising Screens',
+    icon: 'display',
     shortDescription:
-      'Home theatres, professional PA line arrays, trolley speakers, and amplifiers.',
-    exampleItems: ['Home Theatre & Soundbars', 'Portable Trolley Speakers', 'Professional PA & Line Arrays', 'Power Amplifiers'],
-    typicalBuyers: 'Audio equipment dealers, event centres, churches, and retail buyers',
+      'Indoor and outdoor LED video walls, stage screens, and digital signage kiosks.',
+    exampleItems: ['Outdoor Waterproof LED Billboards', 'Indoor Fine-Pitch Video Walls', 'Digital Kiosks', 'LED Controllers'],
+    typicalBuyers: 'Advertising agencies, event venues, churches, and retail chains',
     freightRecommendation: 'Sea or Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'smart-home-products',
@@ -158,17 +169,6 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     typicalBuyers: 'Real estate developers, security installers, and homeowners',
     freightRecommendation: 'Air freight',
     imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 'electronics-gadgets',
-    name: 'Electronics and Gadgets',
-    icon: 'smartphone',
-    shortDescription:
-      'Power banks, smartwatches, tablets, audio buds, and high-turnover mobile accessories.',
-    exampleItems: ['Power Banks & Charging Stations', 'Smartwatches & Audio Buds', 'Tablets & Accessories', 'Phone Accessories'],
-    typicalBuyers: 'Tech retailers, gadget wholesalers, and corporate buyers',
-    freightRecommendation: 'Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'electrical-appliances',

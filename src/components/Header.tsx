@@ -10,8 +10,8 @@ import {
   Home,
   Layers,
   Package,
-  FileText,
   MessageCircle,
+  Search,
 } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { BrandLogo } from './BrandLogo';
@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
   // Primary navigation items for desktop top bar
   const headerPrimaryItems = [
     { label: 'Services', path: '/services' },
-    { label: 'Product Catalogue', path: '/catalogue' },
+    { label: 'Products', path: '/catalogue' },
     { label: 'How It Works', path: '/how-it-works' },
     { label: 'About Us', path: '/about' },
     { label: 'Contact', path: '/contact' },
@@ -47,14 +47,14 @@ export const Header: React.FC = () => {
       description: 'Sea freight, air freight & customs clearing',
     },
     {
-      label: 'Projects & Supply Chain',
+      label: 'Completed Shipments & Proof',
       path: '/projects',
-      description: 'Our work across the China-Nigeria trade corridor',
+      description: 'Factory visits, container loading & Nigeria deliveries',
     },
     {
-      label: 'Testimonials',
+      label: 'Customer Testimonials',
       path: '/testimonials',
-      description: 'Verified customer experiences',
+      description: 'Reviews from Nigerian importers & wholesalers',
     },
   ];
 
@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
 
             {/* Center Architectural Navigation (Desktop) */}
             <nav
-              className="hidden lg:flex items-center gap-7"
+              className="hidden lg:flex items-center gap-6 xl:gap-7"
               aria-label="Primary Navigation"
             >
               {headerPrimaryItems.map((item) => (
@@ -97,7 +97,7 @@ export const Header: React.FC = () => {
                 </NavLink>
               ))}
 
-              {/* Explore Dropdown for Secondary Corridor Pages */}
+              {/* Explore Dropdown for Proof & Corridor Pages */}
               <div
                 className="relative"
                 onMouseEnter={() => setMoreDropdownOpen(true)}
@@ -111,7 +111,7 @@ export const Header: React.FC = () => {
                   }`}
                   aria-expanded={moreDropdownOpen}
                 >
-                  <span>Explore</span>
+                  <span>Proof &amp; More</span>
                   <ChevronDown className="w-3.5 h-3.5 opacity-75" aria-hidden="true" />
                 </button>
 
@@ -141,14 +141,15 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* Right CTAs (Desktop & Tablet) */}
-            <div className="hidden md:flex items-center gap-3 shrink-0">
+            <div className="hidden md:flex items-center gap-2.5 shrink-0">
               <a
-                href={SITE_CONFIG.navigation.secondaryCta.href}
+                href={SITE_CONFIG.contacts.whatsapp.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white/40 text-white hover:bg-white hover:text-brand-midnight px-4 py-2 rounded-md text-xs font-bold uppercase tracking-wider transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
               >
-                {SITE_CONFIG.navigation.secondaryCta.label}
+                <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>WhatsApp Us</span>
               </a>
 
               <Link
@@ -159,14 +160,25 @@ export const Header: React.FC = () => {
               </Link>
             </div>
 
-            {/* Mobile Top Right: Clean Quote CTA Only (Menu Button Removed from Top Right per User Request) */}
-            <div className="flex md:hidden items-center gap-2">
+            {/* Mobile Top Right: Direct WhatsApp + Request Quote (No Top-Right Hamburger Menu) */}
+            <div className="flex md:hidden items-center gap-1.5">
+              <a
+                href={SITE_CONFIG.contacts.whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact Us on WhatsApp"
+                className="inline-flex items-center gap-1 px-2.5 py-2 rounded-md text-[11px] font-bold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>WhatsApp</span>
+              </a>
+
               <Link
                 to={SITE_CONFIG.navigation.primaryCta.path}
                 onClick={closeMenus}
-                className="inline-flex items-center px-3.5 py-2 rounded-md text-[11px] font-bold uppercase tracking-wider text-white bg-brand-cobalt hover:bg-blue-600 transition-colors"
+                className="inline-flex items-center px-3 py-2 rounded-md text-[11px] font-bold uppercase tracking-wider text-white bg-brand-cobalt hover:bg-blue-600 transition-colors"
               >
-                Request Quote
+                Quote
               </Link>
             </div>
           </div>
@@ -177,10 +189,10 @@ export const Header: React.FC = () => {
       <div className="lg:hidden fixed bottom-3 inset-x-3 z-50">
         {/* Pop-up Floating Menu Drawer Above the Bottom Bar */}
         {mobileMenuOpen && (
-          <div className="mb-2.5 rounded-md bg-brand-midnight/95 backdrop-blur-xl border border-white/15 shadow-2xl p-4 max-h-[72vh] overflow-y-auto">
+          <div className="mb-2.5 rounded-md bg-brand-midnight/95 backdrop-blur-xl border border-white/15 shadow-2xl p-4 max-h-[75vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
               <span className="text-[11px] font-mono uppercase tracking-widest text-brand-cyan font-bold">
-                Slybest Navigation Menu
+                Slybest Ventures Global Hubs
               </span>
               <button
                 type="button"
@@ -193,7 +205,8 @@ export const Header: React.FC = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+            {/* Primary Mobile Navigation Links */}
+            <div className="grid grid-cols-2 gap-1.5">
               {SITE_CONFIG.navigation.primary.map((item) => (
                 <NavLink
                   key={item.path}
@@ -201,68 +214,75 @@ export const Header: React.FC = () => {
                   end={item.path === '/'}
                   onClick={closeMenus}
                   className={({ isActive }) =>
-                    `block px-3.5 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider transition-colors ${
+                    `block px-3 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider transition-colors ${
                       isActive
                         ? 'bg-brand-cobalt text-white'
-                        : 'text-slate-200 bg-white/[0.03] hover:bg-white/10'
+                        : 'text-slate-200 bg-white/[0.04] hover:bg-white/10'
                     }`
                   }
                 >
                   {item.label}
                 </NavLink>
               ))}
-            </div>
-
-            <div className="pt-3 mt-3 border-t border-white/10 grid grid-cols-2 gap-2">
               <Link
                 to="/china-sourcing"
                 onClick={closeMenus}
-                className="px-3 py-2.5 rounded-md bg-white/[0.05] border border-white/10 text-xs font-bold uppercase tracking-wider text-brand-cyan hover:text-white"
+                className="px-3 py-2.5 rounded-md bg-white/[0.04] text-xs font-bold uppercase tracking-wider text-brand-cyan hover:text-white"
               >
                 China Sourcing
               </Link>
               <Link
                 to="/shipping-importation"
                 onClick={closeMenus}
-                className="px-3 py-2.5 rounded-md bg-white/[0.05] border border-white/10 text-xs font-bold uppercase tracking-wider text-brand-cyan hover:text-white"
+                className="px-3 py-2.5 rounded-md bg-white/[0.04] text-xs font-bold uppercase tracking-wider text-brand-cyan hover:text-white"
               >
-                Shipping &amp; Freight
+                Shipping &amp; Clearing
               </Link>
             </div>
 
-            <div className="pt-3 mt-3 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {/* 3 Prominent CTA Buttons in Mobile Menu */}
+            <div className="pt-3 mt-3 border-t border-white/10 flex flex-col gap-2">
               <Link
-                to={SITE_CONFIG.navigation.primaryCta.path}
+                to="/request-a-quote"
                 onClick={closeMenus}
                 className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md text-xs font-black uppercase tracking-widest text-white bg-brand-cobalt"
               >
-                <span>{SITE_CONFIG.navigation.primaryCta.label}</span>
+                <span>Request a Quote</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
 
+              <Link
+                to="/catalogue"
+                onClick={closeMenus}
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md text-xs font-black uppercase tracking-widest text-brand-midnight bg-brand-amber"
+              >
+                <Search className="w-4 h-4" aria-hidden="true" />
+                <span>Source a Product</span>
+              </Link>
+
               <a
-                href={SITE_CONFIG.navigation.secondaryCta.href}
+                href={SITE_CONFIG.contacts.whatsapp.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenus}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/5 hover:bg-white hover:text-brand-midnight transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md text-xs font-black uppercase tracking-widest text-white bg-emerald-600"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-                <span>{SITE_CONFIG.navigation.secondaryCta.label}</span>
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                <span>Contact Us on WhatsApp</span>
               </a>
             </div>
 
-            <div className="pt-3 mt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
+            <div className="pt-3 mt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-300">
               <span className="inline-flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-brand-amber" />
-                Alaba International Market, Lagos
+                <MapPin className="w-3.5 h-3.5 text-brand-amber shrink-0" />
+                B108 Alaba International Market, Lagos
               </span>
               <div className="flex gap-3">
                 {SITE_CONFIG.contacts.phoneNumbers.map((phone) => (
                   <a
                     key={phone.href}
                     href={phone.href}
-                    className="inline-flex items-center gap-1 text-white font-mono"
+                    className="inline-flex items-center gap-1 text-white font-mono font-bold"
                   >
                     <Phone className="w-3 h-3 text-brand-cyan" />
                     {phone.display}
@@ -321,23 +341,19 @@ export const Header: React.FC = () => {
             }
           >
             <Package className="w-4 h-4 mb-0.5" aria-hidden="true" />
-            <span>Catalogue</span>
+            <span>Products</span>
           </NavLink>
 
-          <NavLink
-            to="/request-a-quote"
+          <a
+            href={SITE_CONFIG.contacts.whatsapp.href}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeMenus}
-            className={({ isActive }) =>
-              `flex flex-col items-center justify-center py-2 px-1 rounded-md text-[10px] font-bold uppercase tracking-wider transition-colors ${
-                isActive && !mobileMenuOpen
-                  ? 'bg-brand-cobalt text-white'
-                  : 'text-slate-300 hover:text-white hover:bg-white/5'
-              }`
-            }
+            className="flex flex-col items-center justify-center py-2 px-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-600 hover:text-white transition-colors"
           >
-            <FileText className="w-4 h-4 mb-0.5" aria-hidden="true" />
-            <span>Quote</span>
-          </NavLink>
+            <MessageCircle className="w-4 h-4 mb-0.5" aria-hidden="true" />
+            <span>WhatsApp</span>
+          </a>
 
           <button
             type="button"

@@ -95,51 +95,31 @@ export const ProjectsPage: React.FC = () => {
                 className="rounded-md bg-white border border-slate-200/90 overflow-hidden flex flex-col justify-between hover:border-brand-cobalt/40 transition-colors"
               >
                 <div>
-                  {/* Renders client-approved mediaUrl when populated, or a clean architectural slot frame */}
-                  <div className="h-56 bg-brand-midnight relative p-6 flex flex-col justify-between text-white">
-                    {slot.mediaUrl ? (
-                      slot.mediaType === 'video' ? (
-                        <video
-                          src={slot.mediaUrl}
-                          poster={slot.posterUrl}
-                          controls
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      ) : (
+                  {/* Renders mediaUrl or previewImageUrl cleanly */}
+                  <div className="h-56 bg-brand-midnight relative p-6 flex flex-col justify-between text-white overflow-hidden">
+                    {slot.mediaUrl && /\.(mp4|webm|ogg)$/i.test(slot.mediaUrl) ? (
+                      <video
+                        src={slot.mediaUrl}
+                        poster={slot.posterUrl || slot.previewImageUrl}
+                        controls
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <>
                         <img
-                          src={slot.mediaUrl}
+                          src={slot.mediaUrl || slot.previewImageUrl}
                           alt={slot.title}
                           loading="lazy"
                           className="absolute inset-0 w-full h-full object-cover"
                         />
-                      )
-                    ) : (
-                      <>
-                        <div className="flex items-center justify-between">
-                          <span className="px-2.5 py-1 rounded bg-white/[0.08] border border-white/10 text-[11px] font-mono text-brand-cyan">
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight/85 via-brand-midnight/25 to-transparent" />
+                        <div className="relative z-10 flex items-center justify-between">
+                          <span className="px-2.5 py-1 rounded-md bg-brand-midnight/90 border border-white/15 text-[11px] font-mono text-brand-cyan font-bold">
                             {slot.stageTag}
                           </span>
-                          <span className="font-mono text-xs text-slate-400">
+                          <span className="font-mono text-xs text-white/80 font-bold">
                             0{index + 1}
                           </span>
-                        </div>
-
-                        <div className="my-auto flex flex-col items-center text-center">
-                          <div className="w-12 h-12 rounded-md bg-brand-navy border border-brand-cyan/30 text-brand-cyan flex items-center justify-center mb-2.5">
-                            {slot.mediaType === 'video' ? (
-                              <Video className="w-5 h-5" aria-hidden="true" />
-                            ) : (
-                              <Camera className="w-5 h-5" aria-hidden="true" />
-                            )}
-                          </div>
-                          <span className="text-xs font-mono text-slate-300">
-                            Client-Approved {slot.mediaType === 'video' ? 'Video' : 'Photo'} Slot
-                          </span>
-                        </div>
-
-                        <div className="flex items-center justify-between text-[11px] font-mono text-slate-400">
-                          <span>Slybest Trade Bridge</span>
-                          <span>Pending Asset Upload</span>
                         </div>
                       </>
                     )}
