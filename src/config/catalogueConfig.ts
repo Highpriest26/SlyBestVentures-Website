@@ -108,11 +108,11 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Vehicles and Auto Parts',
     icon: 'car',
     shortDescription:
-      'SUVs, sedans, EVs, commercial vans, tyres, and OEM spare parts direct from China.',
-    exampleItems: ['Passenger & Commercial Vehicles', 'Engine & Suspension Parts', 'Body Kits & Auto Lighting', 'Tyres & Workshop Tools'],
+      'Jetour T2 & X70 Plus SUVs, Changan & Toyota executive sedans, EVs, commercial vans, tyres, and OEM auto parts direct from China.',
+    exampleItems: ['Jetour T2 & X70 Plus SUVs', 'Changan & Toyota Sedans', 'Engine & Suspension Parts', 'Body Kits & Auto Lighting'],
     typicalBuyers: 'Auto dealers, fleet operators, spare parts distributors, and individual buyers',
     freightRecommendation: 'Sea or Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/car-jetour-t2-suv.jpg',
     featured: true,
   },
   {
@@ -142,11 +142,12 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Fans and Rechargeable/Solar Fans',
     icon: 'fan',
     shortDescription:
-      'AC/DC rechargeable standing fans, solar fans with panels, and industrial mist fans.',
-    exampleItems: ['AC/DC Rechargeable Standing Fans', 'Solar Fans with Panel', 'Industrial Mist Fans', 'Modern Ceiling Fans'],
+      '25W 16" AC/DC rechargeable solar standing fans, 3-in-1 copper-motor solar fans, and LED solar desk fans.',
+    exampleItems: ['25W 16" Solar Standing Fans', '3-in-1 Copper Motor Solar Fans', 'Solar Desk Fans with LED Light', 'Digital Touch Rechargeable Fans'],
     typicalBuyers: 'Wholesale distributors, retail stores, schools, and households',
     freightRecommendation: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1618941716939-553df3c6c278?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/fan-solar-copper-black.jpg',
+    featured: true,
   },
   {
     id: 'led-displays-advertising',
@@ -288,14 +289,147 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     imageUrl: '/products/refrigerator-3door-kitchen-2.jpg',
   },
   {
-    id: 'cat-item-auto-1',
-    name: 'Passenger Vehicles, SUVs & Commercial Vans',
+    id: 'cat-item-car-jetour-t2',
+    name: 'Jetour T2 (Traveller) Rugged Luxury 4WD SUV',
     category: 'Vehicles and Auto Parts',
     shortDescription:
-      'Brand-new or verified sedans, SUVs, pickups, EVs, and commercial vans shipped from China to Lagos.',
-    specificationNote: 'Preferred make/model, year, trim, and quantity.',
+      'Boxy off-road luxury SUV featuring illuminated JETOUR front grille, matrix LED headlamps, high ground clearance, intelligent 4WD cockpit, and direct export from China to Lagos.',
+    specificationNote:
+      '2.0T Turbo / Plug-in Hybrid Options | Left-Hand Drive (LHD) | Full Export & Lagos Customs Clearing Available.',
     recommendedFreight: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/products/car-jetour-t2-suv.jpg',
+  },
+  {
+    id: 'cat-item-car-jetour-x70',
+    name: 'Jetour X70 Plus / X90 Plus Executive 7-Seater SUV',
+    category: 'Vehicles and Auto Parts',
+    shortDescription:
+      'Spacious executive SUV with bold vertical chrome grille, panoramic sunroof, triple-screen digital cockpit, and luxury leather seating built for Nigerian roads.',
+    specificationNote:
+      '5-Seater or 7-Seater Configuration | Turbocharged Engine | Direct China Sourcing & RoRo/Container Shipping.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/car-jetour-x70-suv.jpg',
+  },
+  {
+    id: 'cat-item-car-changan-univ',
+    name: 'Changan UNI-V Sporty Executive Fastback Sedan',
+    category: 'Vehicles and Auto Parts',
+    shortDescription:
+      'Aerodynamic fastback sedan with borderless parametric front grille, sharp LED headlights, hidden door handles, and smart driver-assistance technology.',
+    specificationNote:
+      '1.5T / 2.0T BlueCore Turbo | Sporty Fastback Styling | Inspected & Shipped Direct from China to Nigeria.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/car-changan-univ-sedan.jpg',
+  },
+  {
+    id: 'cat-item-car-toyota-camry',
+    name: 'Toyota Camry Executive Sedan (Brand New / Verified China Spec)',
+    category: 'Vehicles and Auto Parts',
+    shortDescription:
+      'GAC-Toyota Camry executive sedan combining legendary Toyota reliability, fuel efficiency, wide lower grille styling, and plush executive cabin comfort.',
+    specificationNote:
+      '2.0L Petrol or 2.5L Hybrid | Pre-Shipment Inspection in China | Container or RoRo Sea Freight to Lagos.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/car-toyota-camry-sedan.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-copper',
+    name: '25W 3-in-1 Copper-Motor Rechargeable Solar Standing Fan (Matte Black)',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'Premium 3-in-1 rechargeable standing fan with 100% copper motor, solar panel charging, AC adapter charging, mobile phone USB charging port, and remote control.',
+    specificationNote:
+      'Power: 25W | 3-in-1 (Solar Panel + AC Adapter + Phone USB Output) | Copper Motor | Wholesale Carton Orders.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-solar-copper-black.jpg',
+  },
+  {
+    id: 'cat-item-fan-digital-solar-black',
+    name: '25W Digital Touch Rechargeable Solar Standing Fan with Night Lamp',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      '5-blade high-airflow rechargeable standing fan with digital speed display, warm amber night lamp, remote control, and external solar panel.',
+    specificationNote:
+      'Power: 25W | Digital Speed Readout | Built-in Amber Night Light | Includes High-Efficiency Solar Panel.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-digital-solar-black.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-remote-black',
+    name: '25W 2-in-1 Rechargeable Solar Standing Fan with LED Bulb & Remote',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'Complete off-grid cooling kit featuring a 5-blade black pedestal fan, built-in warm LED lamp, detachable hanging LED bulb, remote control, and solar panel.',
+    specificationNote:
+      'Power: 25W | 2-in-1 AC/DC + Solar | External Hanging LED Bulb & Remote Included | Ideal for Wholesale.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-solar-remote-black.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-16inch-white',
+    name: '16" 25W 2-in-1 Rechargeable AC/DC Solar Standing Fan (White)',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      '16-inch white 5-blade rechargeable standing fan with multi-bar green LED battery indicator, built-in speaker/alarm grille, and external solar panel.',
+    specificationNote:
+      'Size: 16-Inch | Power: 25W | Multi-Level LED Indicator + USB Port | Includes Solar Panel.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-solar-16inch-white.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-desk-orange',
+    name: 'Portable Rechargeable Solar Table Fan with Bright LED Ring Light (Orange)',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'Compact high-visibility orange table fan featuring an ultra-bright center LED light ring, solar panel, multi-head phone charging cable, and remote control.',
+    specificationNote:
+      'Tabletop / Desk Design | Center LED Ring Lamp | Solar Panel + Multi-Pin Mobile Charging Cable + Remote.',
+    recommendedFreight: 'Sea or Air freight',
+    imageUrl: '/products/fan-solar-desk-orange.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-standing-white-1',
+    name: '25W 2-in-1 Rechargeable Solar Standing Fan with Ring Light & Bulb (White)',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'White 5-blade adjustable pedestal fan equipped with a red-rimmed LED emergency lamp, external hanging LED bulb, and wide solar charging panel.',
+    specificationNote:
+      'Power: 25W | 2-in-1 Solar & AC Charging | Built-in Emergency Lamp + External LED Bulb.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-solar-standing-white-1.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-standing-black-1',
+    name: '25W 2-in-1 Push-Button Rechargeable Solar Standing Fan (Black)',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'Durable 5-button manual control rechargeable solar standing fan with built-in upper LED spot torch and matching solar panel.',
+    specificationNote:
+      'Power: 25W | 5 Tactile Control Buttons + Built-in LED Torch | Includes Solar Panel.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-solar-standing-black-1.jpg',
+  },
+  {
+    id: 'cat-item-fan-solar-table-white',
+    name: 'Compact Rechargeable Solar Pedestal Fan with Dual External LED Bulbs',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'Low-stand rechargeable solar fan complete with two external hanging LED bulbs, remote control, AC charger, and portable solar panel.',
+    specificationNote:
+      'Includes 2 Hanging LED Bulbs + Solar Panel + Remote Control | Great for Homes, Shops & Hostels.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-solar-table-white.jpg',
+  },
+  {
+    id: 'cat-item-fan-digital-standing-black',
+    name: 'Heavy-Duty Digital Rechargeable Standing Fan with LED Display & Bulb',
+    category: 'Fans and Rechargeable/Solar Fans',
+    shortDescription:
+      'Commercial-grade black standing fan with digital speed readout (up to level 30+), warm LED night lamp, external bulb output, and weighted round base.',
+    specificationNote:
+      'Digital LED Speed Display | Built-in Warm Lamp + Hanging LED Bulb | AC/DC Rechargeable.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fan-digital-standing-black.jpg',
   },
   {
     id: 'cat-item-auto-2',

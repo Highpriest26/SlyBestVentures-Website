@@ -83,6 +83,7 @@ const TRADE_DESK_SCENARIOS: TradeDeskScenario[] = [
 ];
 
 type CategoryFilterKey = 'top' | 'electronics' | 'solar' | 'appliances' | 'auto' | 'all';
+type FeaturedStockTabKey = 'highlights' | 'cars' | 'fans' | 'speakers' | 'fridges' | 'all';
 
 const SIX_CORE_SERVICES = [
   {
@@ -145,6 +146,7 @@ export const HomePage: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   const [activeScenarioId, setActiveScenarioId] = useState<string>('suppliers');
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilterKey>('top');
+  const [stockTab, setStockTab] = useState<FeaturedStockTabKey>('highlights');
 
   const activeScenario =
     TRADE_DESK_SCENARIOS.find((s) => s.id === activeScenarioId) || TRADE_DESK_SCENARIOS[0];
@@ -198,7 +200,41 @@ export const HomePage: React.FC = () => {
   };
 
   const displayedCategories = getFilteredCategories();
-  const featuredProducts = CATALOGUE_ITEMS.slice(0, 6);
+  const allUploadedProducts = CATALOGUE_ITEMS.filter((item) =>
+    item.imageUrl?.startsWith('/products/')
+  );
+  const getFilteredStockProducts = () => {
+    switch (stockTab) {
+      case 'cars':
+        return allUploadedProducts.filter((i) => i.category === 'Vehicles and Auto Parts');
+      case 'fans':
+        return allUploadedProducts.filter(
+          (i) => i.category === 'Fans and Rechargeable/Solar Fans'
+        );
+      case 'speakers':
+        return allUploadedProducts.filter((i) => i.category === 'Speakers and Sound Systems');
+      case 'fridges':
+        return allUploadedProducts.filter((i) => i.category === 'Refrigerators and Freezers');
+      case 'all':
+        return allUploadedProducts;
+      case 'highlights':
+      default:
+        return [
+          'cat-item-car-jetour-t2',
+          'cat-item-car-toyota-camry',
+          'cat-item-car-changan-univ',
+          'cat-item-fan-solar-copper',
+          'cat-item-fan-digital-solar-black',
+          'cat-item-fan-solar-desk-orange',
+          'cat-item-audio-baj-2151',
+          'cat-item-fridge-3door-1',
+          'cat-item-fridge-chest-2m',
+        ]
+          .map((id) => allUploadedProducts.find((item) => item.id === id))
+          .filter((item): item is NonNullable<typeof item> => Boolean(item));
+    }
+  };
+  const featuredProducts = getFilteredStockProducts();
   const featuredProofSlots = PROJECT_MEDIA_SLOTS.slice(0, 6);
 
   return (
@@ -402,15 +438,15 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Featured Real Products Showcase: Speakers & Refrigerators */}
+          {/* Featured Real Products Showcase: Cars, Solar Fans, Speakers & Refrigerators */}
           <div className="mb-14">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 pb-4 border-b border-slate-200">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5 pb-4 border-b border-slate-200">
               <div>
                 <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-brand-amber/20 text-brand-midnight mb-2">
                   Featured Factory-Direct Stock &amp; Arrivals
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-display font-black uppercase tracking-tight text-brand-midnight">
-                  Featured Speakers, Sound Systems &amp; Refrigerators
+                  Cars, Solar Fans, Speakers &amp; Refrigerators
                 </h3>
               </div>
               <Link
@@ -420,6 +456,31 @@ export const HomePage: React.FC = () => {
                 <span>See All Catalogue Products</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
+            </div>
+
+            {/* Filter Tabs for Featured Uploaded Products */}
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-6">
+              {[
+                { key: 'highlights' as FeaturedStockTabKey, label: 'Top Highlights (9)' },
+                { key: 'cars' as FeaturedStockTabKey, label: 'Cars & SUVs (4)' },
+                { key: 'fans' as FeaturedStockTabKey, label: 'Solar & Rechargeable Fans (9)' },
+                { key: 'speakers' as FeaturedStockTabKey, label: 'Speakers & Sound (2)' },
+                { key: 'fridges' as FeaturedStockTabKey, label: 'Refrigerators & Freezers (4)' },
+                { key: 'all' as FeaturedStockTabKey, label: `View All Stock (${allUploadedProducts.length})` },
+              ].map((tab) => (
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => setStockTab(tab.key)}
+                  className={`shrink-0 px-3.5 py-2 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                    stockTab === tab.key
+                      ? 'bg-brand-midnight text-brand-cyan shadow-xs'
+                      : 'bg-brand-softWhite text-brand-midnight hover:bg-slate-200/70 border border-slate-200'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
