@@ -23,7 +23,7 @@ import {
   Globe2,
 } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
-import { PRODUCT_CATEGORIES } from '../config/catalogueConfig';
+import { PRODUCT_CATEGORIES, CATALOGUE_ITEMS } from '../config/catalogueConfig';
 import {
   CREDIBILITY_HIGHLIGHTS,
   PROJECT_MEDIA_SLOTS,
@@ -198,6 +198,7 @@ export const HomePage: React.FC = () => {
   };
 
   const displayedCategories = getFilteredCategories();
+  const featuredProducts = CATALOGUE_ITEMS.slice(0, 6);
   const featuredProofSlots = PROJECT_MEDIA_SLOTS.slice(0, 6);
 
   return (
@@ -398,6 +399,91 @@ export const HomePage: React.FC = () => {
                 <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 <span>Ask on WhatsApp</span>
               </a>
+            </div>
+          </div>
+
+          {/* Featured Real Products Showcase: Speakers & Refrigerators */}
+          <div className="mb-14">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 pb-4 border-b border-slate-200">
+              <div>
+                <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-brand-amber/20 text-brand-midnight mb-2">
+                  Featured Factory-Direct Stock &amp; Arrivals
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-display font-black uppercase tracking-tight text-brand-midnight">
+                  Featured Speakers, Sound Systems &amp; Refrigerators
+                </h3>
+              </div>
+              <Link
+                to="/catalogue"
+                className="text-xs font-black uppercase tracking-widest text-brand-cobalt hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>See All Catalogue Products</span>
+                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {featuredProducts.map((item) => (
+                <div
+                  key={item.id}
+                  className="group bg-white border border-slate-200 hover:border-brand-cobalt rounded-md overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
+                >
+                  <div>
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 border-b border-slate-200">
+                      {item.imageUrl && (
+                        <img
+                          src={item.imageUrl}
+                          alt={item.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      )}
+                      <span className="absolute top-3 left-3 text-[10px] font-mono font-bold uppercase tracking-widest bg-brand-midnight/90 text-brand-cyan px-2.5 py-1 rounded-md">
+                        {item.category}
+                      </span>
+                      <span className="absolute bottom-3 right-3 text-[10px] font-mono font-bold uppercase tracking-widest bg-brand-cobalt text-white px-2.5 py-1 rounded-md">
+                        {item.recommendedFreight}
+                      </span>
+                    </div>
+
+                    <div className="p-5">
+                      <h4 className="text-lg font-display font-black uppercase tracking-tight text-brand-midnight group-hover:text-brand-cobalt transition-colors mb-2">
+                        {item.name}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-3">
+                        {item.shortDescription}
+                      </p>
+                      <div className="p-2.5 rounded-md bg-brand-softWhite border border-slate-200/80 text-[11px] text-slate-700 font-mono leading-relaxed">
+                        {item.specificationNote}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="px-5 py-3.5 border-t border-slate-200 bg-brand-softWhite flex items-center justify-between gap-2">
+                    <Link
+                      to={`/request-a-quote?category=${encodeURIComponent(
+                        item.category
+                      )}&product=${encodeURIComponent(item.name)}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-brand-cobalt hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider transition-colors"
+                    >
+                      <span>Request a Quote</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    </Link>
+
+                    <a
+                      href={`https://wa.me/${SITE_CONFIG.contacts.whatsapp.rawNumber}?text=${encodeURIComponent(
+                        `Hello Slybest Ventures Global Hubs, I want to enquire about ordering "${item.name}".`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition-colors"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

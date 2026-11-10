@@ -156,15 +156,13 @@ export const PROJECT_MEDIA_SLOTS: ProjectMediaSlot[] = [
   },
   {
     id: 'product-videos',
-    title: 'Sourced Electronics, Solar & Appliances Showcase',
-    mediaType: 'video',
+    title: 'Sourced Speakers, Refrigerators & Appliances Showcase',
+    mediaType: 'photo',
     stageTag: 'PRODUCT SHOWCASE',
     description:
-      'Inspected Smart TVs, lithium batteries, hybrid inverters, refrigerators, and professional audio systems sourced directly from partner factories.',
-    previewImageUrl:
-      'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=80',
-    mediaUrl:
-      'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=80',
+      'Factory-sourced BAJ portable party speakers (BA-L2151 15"×2 & BA-L2201 12"×2), 3-door upright refrigerators, and 2.0m commercial chest freezers.',
+    previewImageUrl: '/products/speaker-baj-ba-l2151.jpg',
+    mediaUrl: '/products/speaker-baj-ba-l2151.jpg',
   },
   {
     id: 'factory-inspection-videos',

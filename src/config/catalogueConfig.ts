@@ -84,11 +84,11 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Speakers and Sound Systems',
     icon: 'speaker',
     shortDescription:
-      'Home theatres, professional PA line arrays, trolley speakers, and amplifiers.',
-    exampleItems: ['Home Theatre & Soundbars', 'Portable Trolley Speakers', 'Professional PA & Line Arrays', 'Power Amplifiers'],
+      'BAJ dual-15" & dual-12" party wireless speakers, home theatres, PA line arrays, and amplifiers.',
+    exampleItems: ['BAJ BA-L2151 (15"×2) Party Speaker', 'BAJ BA-L2201 (12"×2) Wireless Speaker', 'Home Theatre & Soundbars', 'Professional PA & Line Arrays'],
     typicalBuyers: 'Audio equipment dealers, event centres, churches, and retail buyers',
     freightRecommendation: 'Sea or Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/speaker-baj-ba-l2151.jpg',
     featured: true,
   },
   {
@@ -96,11 +96,11 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Refrigerators and Freezers',
     icon: 'snowflake',
     shortDescription:
-      'Double-door refrigerators, deep chest freezers, solar DC chillers, and display coolers.',
-    exampleItems: ['Chest & Deep Freezers', 'Side-by-Side Refrigerators', 'Commercial Beverage Chillers', 'Solar DC Freezers'],
+      '3-door multi-zone upright refrigerators, 2.0m commercial chest freezers, and solar DC chillers.',
+    exampleItems: ['3-Door Upright Refrigerators', '2.0m Commercial Chest Freezers', 'Double-Door Refrigerators', 'Solar DC Freezers'],
     typicalBuyers: 'Appliance retailers, supermarkets, hospitality businesses, and households',
     freightRecommendation: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/refrigerator-3door-kitchen-1.jpg',
     featured: true,
   },
   {
@@ -221,6 +221,72 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
  * Rule: Do not show fixed prices unless the client later provides approved prices.
  */
 export const CATALOGUE_ITEMS: CatalogueItem[] = [
+  {
+    id: 'cat-item-audio-baj-2151',
+    name: 'BAJ BA-L2151 Portable Party Wireless Speaker (15" × 2 Dual Woofers)',
+    category: 'Speakers and Sound Systems',
+    shortDescription:
+      'High-output 15"×2 dual-woofer portable party speaker featuring RGB Flash Lamp ring lighting, Extra Bass, Bluetooth/USB/TF/FM/AUX playback, LED display, and 2 wireless microphones.',
+    specificationNote:
+      'Model: BAJ BA-L2151 | Woofer: 15"×2 + 2" Tweeter | Battery: 12V/9Ah Rechargeable + 110–220V AC | Includes 2 Wireless Mics.',
+    recommendedFreight: 'Sea or Air freight',
+    imageUrl: '/products/speaker-baj-ba-l2151.jpg',
+  },
+  {
+    id: 'cat-item-audio-baj-2201',
+    name: 'BAJ BA-L2201 Portable Wireless Party Speaker (12" × 2 Dual Woofers)',
+    category: 'Speakers and Sound Systems',
+    shortDescription:
+      'Powerful 12"×2 dual-bass portable wireless speaker with top DJ rotary control console, dynamic RGB Flash Lamp lighting, TWS wireless pairing, and 2 wireless karaoke microphones.',
+    specificationNote:
+      'Model: BAJ BA-L2201 | Woofer: 12"×2 + 2" Tweeter | Battery: 12V/7Ah Lithium + 110–220V AC | USB/TF/FM/AUX/Bluetooth.',
+    recommendedFreight: 'Sea or Air freight',
+    imageUrl: '/products/speaker-baj-ba-l2201.jpg',
+  },
+  {
+    id: 'cat-item-fridge-chest-2m',
+    name: '2.0m Commercial Single-Temperature Deep Chest Freezer',
+    category: 'Refrigerators and Freezers',
+    shortDescription:
+      'Heavy-duty 2.0-metre commercial chest freezer with dual flip top doors, high-density foam insulation, smart temperature control, safety lock, and heavy-duty caster wheels.',
+    specificationNote:
+      'External Dimensions: 2000 × 760 × 850 mm | Internal Dimensions: 1850 × 635 × 650 mm | Fast Cooling+ & Cold-Lock Insulation.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/chest-freezer-2m.jpg',
+  },
+  {
+    id: 'cat-item-fridge-3door-1',
+    name: '3-Door Upright Multi-Zone Refrigerator & Freezer (Brushed Titanium)',
+    category: 'Refrigerators and Freezers',
+    shortDescription:
+      'Modern 3-door upright refrigerator with dedicated upper fresh-food compartment, middle soft-freeze convertible drawer, and lower deep-freezer zone in brushed dark titanium finish.',
+    specificationNote:
+      '3-Door Multi-Temperature Design | Energy-Efficient Inverter Compressor | Low-Noise & Fast Cooling for Homes & Apartments.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/refrigerator-3door-kitchen-1.jpg',
+  },
+  {
+    id: 'cat-item-fridge-3door-open',
+    name: '3-Door Upright Refrigerator — Multi-Compartment Interior Storage',
+    category: 'Refrigerators and Freezers',
+    shortDescription:
+      'Full interior view showing adjustable tempered-glass shelves, deep door bottle racks, crisper drawer, and 4 transparent pull-out freezer drawers for organized cold storage.',
+    specificationNote:
+      '3 Independent Cooling Zones | Tempered Glass Shelving | Transparent Freezer Drawers | Wholesale & Container Orders.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/refrigerator-3door-open.jpg',
+  },
+  {
+    id: 'cat-item-fridge-3door-2',
+    name: '3-Door Upright Refrigerator & Freezer — Modern Kitchen Edition',
+    category: 'Refrigerators and Freezers',
+    shortDescription:
+      'Space-saving upright 3-door refrigerator engineered for modern Nigerian kitchens, hospitality suites, and retail appliance distribution.',
+    specificationNote:
+      'Sleek Flush-Handle Doors | Tropicalized Cooling Performance | Available in Bulk & Mixed-Container Shipments.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/refrigerator-3door-kitchen-2.jpg',
+  },
   {
     id: 'cat-item-auto-1',
     name: 'Passenger Vehicles, SUVs & Commercial Vans',
