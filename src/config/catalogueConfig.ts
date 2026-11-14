@@ -72,11 +72,11 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Inverters and Batteries',
     icon: 'battery',
     shortDescription:
-      'Hybrid solar inverters, LiFePO4 lithium battery banks, and rack-mount storage systems.',
-    exampleItems: ['Hybrid Solar Inverters', 'LiFePO4 Lithium Battery Packs', 'Rack-Mount Storage Systems', 'Charge Controllers'],
+      'All-in-One ESS integrated inverters & lithium storage (5kWh–15kWh), hybrid solar inverters, and LiFePO4 battery banks.',
+    exampleItems: ['All-in-One ESS (5/7.5/10/15 kWh)', '11kW Hybrid Solar Inverters', 'LiFePO4 Lithium Battery Packs', 'Rack-Mount Storage Systems'],
     typicalBuyers: 'Renewable energy installers, corporate offices, and wholesale distributors',
     freightRecommendation: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/inverter-all-in-one-ess.jpg',
     featured: true,
   },
   {
@@ -131,11 +131,12 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Washing Machines',
     icon: 'washing-machine',
     shortDescription:
-      'Front-load automatic washers, twin-tub machines, and commercial laundry units.',
-    exampleItems: ['Front-Load Automatic Washers', 'Twin-Tub Washing Machines', 'Washer-Dryer Combos', 'Commercial Laundry Units'],
+      'Midea 15kg heavy-duty automatic washers, Chigo 11kg tempered-glass washers, and commercial laundry units.',
+    exampleItems: ['Midea 15KG Automatic Washers', 'Chigo 11KG Glass Lid Washers', 'Top-Load Digital Automatic Washers', 'Twin-Tub & Commercial Washers'],
     typicalBuyers: 'Electronics wholesalers, laundromats, hotels, and residential buyers',
     freightRecommendation: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/washer-midea-15kg.jpg',
+    featured: true,
   },
   {
     id: 'fans-rechargeable-solar',
@@ -154,22 +155,24 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'LED Displays and Digital Advertising Screens',
     icon: 'display',
     shortDescription:
-      'Indoor and outdoor LED video walls, stage screens, and digital signage kiosks.',
-    exampleItems: ['Outdoor Waterproof LED Billboards', 'Indoor Fine-Pitch Video Walls', 'Digital Kiosks', 'LED Controllers'],
-    typicalBuyers: 'Advertising agencies, event venues, churches, and retail chains',
+      'Smart touch mobile StandByMe rotating displays, fine-pitch video walls, and outdoor LED billboards.',
+    exampleItems: ['Smart Touch StandByMe Mobile Displays', 'Interactive Rotatable Touch Screens', 'Fine-Pitch Video Walls', 'Outdoor LED Billboards'],
+    typicalBuyers: 'Advertising agencies, corporate offices, event venues, churches, and retail chains',
     freightRecommendation: 'Sea or Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/smart-touch-standbyme-tvs.jpg',
+    featured: true,
   },
   {
     id: 'smart-home-products',
     name: 'Smart Home Products',
     icon: 'house',
     shortDescription:
-      'Biometric smart door locks, 4G/solar CCTV security cameras, and home automation.',
-    exampleItems: ['Biometric & Smart Door Locks', 'Solar 4G / Wi-Fi CCTV Cameras', 'Smart Touch Switches', 'Video Doorbells'],
-    typicalBuyers: 'Real estate developers, security installers, and homeowners',
+      'Multi-lens 4G/solar 10X zoom security cameras, biometric smart door locks, and solar surveillance.',
+    exampleItems: ['Multi-Lens 4G Solar PTZ Cameras', '10X Zoom Ultra-HD Security Kits', 'Biometric & Smart Door Locks', 'Smart Touch Switches'],
+    typicalBuyers: 'Security installers, estate developers, commercial facilities, and homeowners',
     freightRecommendation: 'Air freight',
-    imageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/camera-solar-multilens-10x.jpg',
+    featured: true,
   },
   {
     id: 'electrical-appliances',
@@ -187,11 +190,12 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     name: 'Fuel Station Equipment',
     icon: 'fuel',
     shortDescription:
-      'Digital fuel dispensers, submersible pumps, flow meters, nozzles, and LPG/CNG gear.',
-    exampleItems: ['Multi-Nozzle Fuel Dispensers', 'Submersible Pumps & Meters', 'Hoses & Auto Nozzles', 'Tank Gauging Systems'],
-    typicalBuyers: 'Petroleum marketers, fuel station contractors, and engineers',
+      'Tokheim & Huaxin dual-nozzle digital fuel dispensers, submersible pumps, flow meters, and fuel nozzles.',
+    exampleItems: ['Tokheim Dual-Nozzle Fuel Dispensers', 'Huaxin Digital Fuel Dispensers', 'Submersible Pumps & Flow Meters', 'Hoses & Auto Shut-off Nozzles'],
+    typicalBuyers: 'Petroleum marketers, filling station contractors, and petroleum engineers',
     freightRecommendation: 'Sea freight',
-    imageUrl: 'https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/products/fuel-dispenser-tokheim.jpg',
+    featured: true,
   },
   {
     id: 'printers-pos-equipment',
@@ -222,6 +226,116 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
  * Rule: Do not show fixed prices unless the client later provides approved prices.
  */
 export const CATALOGUE_ITEMS: CatalogueItem[] = [
+  {
+    id: 'cat-item-inv-allinone-ess',
+    name: 'All-in-One ESS Integrated Solar Inverter & LiFePO4 Storage System (5–15 kWh)',
+    category: 'Inverters and Batteries',
+    shortDescription:
+      'Next-generation mobile home & commercial energy storage system integrating an 11kW pure sine-wave hybrid solar inverter with 5kWh, 7.5kWh, 10kWh, or 15kWh LiFePO4 lithium battery, color LCD touchscreen, and caster wheels.',
+    specificationNote:
+      'Capacity Options: 5kWh / 7.5kWh / 10kWh / 15kWh | Inverter: 5.5kW / 11kW Pure Sine Wave | Plug-and-Play Solar & AC In/Out | Caster Wheels for Effortless Mobility.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/inverter-all-in-one-ess.jpg',
+  },
+  {
+    id: 'cat-item-camera-solar-multilens',
+    name: 'Multi-Lens 4G / Wi-Fi Solar PTZ Security Camera with 10X Zoom & Solar Panel',
+    category: 'Smart Home Products',
+    shortDescription:
+      'Commercial-grade outdoor multi-lens solar surveillance system with 3 panoramic lenses and a central PTZ camera. Delivers 360° coverage, 10X zoom, motion-tracking floodlights, 4G SIM / Wi-Fi connectivity, two-way audio, and solar charging panel.',
+    specificationNote:
+      'Multi-Lens Multi-View System | 10X Hybrid Zoom | High-Efficiency Solar Panel Kit | 4G SIM Card / Wi-Fi Support | Mobile App Live Remote Viewing.',
+    recommendedFreight: 'Air freight',
+    imageUrl: '/products/camera-solar-multilens-10x.jpg',
+  },
+  {
+    id: 'cat-item-tv-standbyme',
+    name: 'Smart Touch Mobile StandByMe Rotatable Floor-Standing TV & Display',
+    category: 'LED Displays and Digital Advertising Screens',
+    shortDescription:
+      'Rollable smart touch screen display on a mobile weighted wheeled base. Features 180° rotation between portrait & landscape, 40° tilt angle adjustment, height adjustment, built-in battery, HD 1080P webcam, and Android smart ecosystem.',
+    specificationNote:
+      'Sizes: 27" / 32" Touch Screen | 180° Screen Rotation | Silent Universal Wheels | Built-in Rechargeable Battery & HD Camera | Ideal for Homes, Offices & Stores.',
+    recommendedFreight: 'Sea or Air freight',
+    imageUrl: '/products/smart-touch-standbyme-tvs.jpg',
+  },
+  {
+    id: 'cat-item-washer-midea-15kg',
+    name: 'Midea 15KG Heavy-Duty Automatic Top-Load Washing Machine',
+    category: 'Washing Machines',
+    shortDescription:
+      'Extra-large 15kg commercial-capacity automatic top-load washer featuring dark-titanium stainless steel body, full tempered-glass soft-close lid, powerful high-torque copper motor, and whisper-quiet wash cycle.',
+    specificationNote:
+      'Capacity: 15 KG Large Load | Stainless Steel Inner Tub | Digital Touch Console | Easily Washes Heavy Blankets, Curtains & Duvets.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/washer-midea-15kg.jpg',
+  },
+  {
+    id: 'cat-item-washer-chigo-11kg',
+    name: 'CHIGO 11KG Top-Load Automatic Washing Machine with Tempered Glass Lid',
+    category: 'Washing Machines',
+    shortDescription:
+      'Modern bronze-finish 11kg fully automatic washing machine with high-power copper motor, 10 automated wash programs, anti-tangling pulsator, and electronic water-level selection.',
+    specificationNote:
+      'Capacity: 11 KG | Pure Copper Motor | Dimensions: 480 × 475 × 800 mm | Air Dry & Blue Light Clean Functions.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/washer-chigo-11kg.jpg',
+  },
+  {
+    id: 'cat-item-washer-topload-glass',
+    name: 'Automatic Top-Load Washer with Transparent Blue Tempered-Glass Lid',
+    category: 'Washing Machines',
+    shortDescription:
+      'Factory-fresh top-load washing machine with transparent ocean-blue panoramic glass lid, English digital control buttons, stainless honeycomb wash drum, and water inlet valve.',
+    specificationNote:
+      'English Digital Control Panel | Multi-Program Logic | Water-Level Selector | Factory-Direct Container Quantities.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/washer-topload-glass.jpg',
+  },
+  {
+    id: 'cat-item-fuel-tokheim',
+    name: 'Tokheim Dual-Nozzle Electronic Digital Fuel Dispenser',
+    category: 'Fuel Station Equipment',
+    shortDescription:
+      'Commercial dual-nozzle heavy-duty fuel dispenser featuring high-precision electronic metering, bright digital LCD price/litre displays, dual auto shut-off nozzles, and explosion-proof internal pumping mechanism.',
+    specificationNote:
+      'Dual Product / Dual Nozzle | Flow Rate: 50–100 L/min | Heavy-Duty Steel Enclosure with Auto Retractable Hoses | Ideal for Fuel Stations Nationwide.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fuel-dispenser-tokheim.jpg',
+  },
+  {
+    id: 'cat-item-fuel-forecourt',
+    name: 'Logistics Station High-Speed Dual-Nozzle Fuel Dispenser',
+    category: 'Fuel Station Equipment',
+    shortDescription:
+      'High-throughput dual-nozzle commercial fuel dispensing pump unit engineered for commercial logistics hubs, transport depots, and retail filling stations.',
+    specificationNote:
+      'Dual Hose System | Fast Dispensing Rate: Up to 100 L/min | Submersible Pump / Suction Pump Configuration Available.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fuel-dispenser-forecourt.jpg',
+  },
+  {
+    id: 'cat-item-fuel-huaxin-specs',
+    name: 'Huaxin 50–100L/min Commercial Fuel Dispenser (Complete Spec Sheet)',
+    category: 'Fuel Station Equipment',
+    shortDescription:
+      'Verified commercial dual-nozzle dispenser with 750W–1100W pump power, 0.3‰ precision accuracy, 15m suction lift, and 30m delivery head.',
+    specificationNote:
+      'Voltage: 110V / 220V / 380V | Power: 750W–1100W | Flow Rate: 50–100 L/min | Dimensions: 90 × 45 × 210 cm | Weight: 260 kg.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fuel-dispenser-huaxin-specs.jpg',
+  },
+  {
+    id: 'cat-item-fuel-arch-specs',
+    name: 'Arch-Canopy Electronic Fuel Dispenser with Keypad Preset (Dual Nozzle)',
+    category: 'Fuel Station Equipment',
+    shortDescription:
+      'Dual-nozzle electronic fuel dispenser featuring overhead canopy styling, integrated numeric preset keypad, clear dual LCDs, and heavy-duty flow meter.',
+    specificationNote:
+      'Voltage: 110V / 220V / 380V | Flow Rate: 50–100 L/min | Preset Volume/Price Function | Dimensions: 90 × 45 × 210 cm.',
+    recommendedFreight: 'Sea freight',
+    imageUrl: '/products/fuel-dispenser-arch-specs.jpg',
+  },
   {
     id: 'cat-item-audio-baj-2151',
     name: 'BAJ BA-L2151 Portable Party Wireless Speaker (15" × 2 Dual Woofers)',

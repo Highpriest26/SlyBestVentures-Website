@@ -156,25 +156,36 @@ export const PROJECT_MEDIA_SLOTS: ProjectMediaSlot[] = [
   },
   {
     id: 'product-videos',
-    title: 'Sourced Speakers, Refrigerators & Appliances Showcase',
-    mediaType: 'photo',
-    stageTag: 'PRODUCT SHOWCASE',
+    title: 'Smart Touch StandByMe Mobile TV & Display Features Demo',
+    mediaType: 'video',
+    stageTag: 'PRODUCT VIDEO DEMO',
     description:
-      'Factory-sourced BAJ portable party speakers (BA-L2151 15"×2 & BA-L2201 12"×2), 3-door upright refrigerators, and 2.0m commercial chest freezers.',
-    previewImageUrl: '/products/speaker-baj-ba-l2151.jpg',
-    mediaUrl: '/products/speaker-baj-ba-l2151.jpg',
+      'Live demonstration of the mobile StandByMe smart display showing 180° screen rotation, 40° tilt angle adjustment, height adjustment, smooth wheel mobility, and Android interface.',
+    previewImageUrl: '/products/smart-touch-standbyme-tvs.jpg',
+    mediaUrl: '/products/video-smart-touch-tv-features.mp4',
+    posterUrl: '/products/smart-touch-standbyme-tvs.jpg',
   },
   {
     id: 'factory-inspection-videos',
-    title: 'Pre-Shipment Quality & Specification Checks',
+    title: '11kW + 15kWh All-in-One Solar ESS Testing & Factory Verification',
     mediaType: 'video',
-    stageTag: 'QUALITY ASSURANCE',
+    stageTag: 'FACTORY INSPECTION & TESTING',
     description:
-      'Batch testing, voltage/specification verification, and private-label packaging inspections performed at partner factories in China.',
-    previewImageUrl:
-      'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=80',
-    mediaUrl:
-      'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=80',
+      'Factory bench testing of the integrated 11kW solar inverter and 15kWh LiFePO4 battery storage system: AC/PV terminal wiring, breaker operation, and multi-fan load performance.',
+    previewImageUrl: '/products/inverter-all-in-one-ess.jpg',
+    mediaUrl: '/products/video-inverter-ess-wiring-test.mp4',
+    posterUrl: '/products/inverter-all-in-one-ess.jpg',
+  },
+  {
+    id: 'solar-camera-video',
+    title: 'Multi-Lens 4G Solar PTZ Security Camera Mobile App Live Setup',
+    mediaType: 'video',
+    stageTag: 'LIVE HARDWARE DEMO',
+    description:
+      'Field setup demonstration of the multi-lens 4G solar surveillance system: solar power connectivity, SIM card pairing, multi-view camera tracking, and mobile smartphone app control.',
+    previewImageUrl: '/products/camera-solar-multilens-10x.jpg',
+    mediaUrl: '/products/video-solar-4g-ptz-camera.mp4',
+    posterUrl: '/products/camera-solar-multilens-10x.jpg',
   },
 ];
 

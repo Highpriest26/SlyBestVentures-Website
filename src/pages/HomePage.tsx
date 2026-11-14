@@ -83,7 +83,18 @@ const TRADE_DESK_SCENARIOS: TradeDeskScenario[] = [
 ];
 
 type CategoryFilterKey = 'top' | 'electronics' | 'solar' | 'appliances' | 'auto' | 'all';
-type FeaturedStockTabKey = 'highlights' | 'cars' | 'fans' | 'speakers' | 'fridges' | 'all';
+type FeaturedStockTabKey =
+  | 'highlights'
+  | 'solar-ess'
+  | 'cameras'
+  | 'fuel'
+  | 'washers'
+  | 'displays'
+  | 'cars'
+  | 'fans'
+  | 'speakers'
+  | 'fridges'
+  | 'all';
 
 const SIX_CORE_SERVICES = [
   {
@@ -205,6 +216,18 @@ export const HomePage: React.FC = () => {
   );
   const getFilteredStockProducts = () => {
     switch (stockTab) {
+      case 'solar-ess':
+        return allUploadedProducts.filter((i) => i.category === 'Inverters and Batteries');
+      case 'cameras':
+        return allUploadedProducts.filter((i) => i.category === 'Smart Home Products');
+      case 'fuel':
+        return allUploadedProducts.filter((i) => i.category === 'Fuel Station Equipment');
+      case 'washers':
+        return allUploadedProducts.filter((i) => i.category === 'Washing Machines');
+      case 'displays':
+        return allUploadedProducts.filter(
+          (i) => i.category === 'LED Displays and Digital Advertising Screens'
+        );
       case 'cars':
         return allUploadedProducts.filter((i) => i.category === 'Vehicles and Auto Parts');
       case 'fans':
@@ -220,15 +243,18 @@ export const HomePage: React.FC = () => {
       case 'highlights':
       default:
         return [
+          'cat-item-inv-allinone-ess',
+          'cat-item-camera-solar-multilens',
+          'cat-item-tv-standbyme',
+          'cat-item-fuel-tokheim',
+          'cat-item-washer-midea-15kg',
+          'cat-item-washer-chigo-11kg',
           'cat-item-car-jetour-t2',
           'cat-item-car-toyota-camry',
-          'cat-item-car-changan-univ',
           'cat-item-fan-solar-copper',
           'cat-item-fan-digital-solar-black',
-          'cat-item-fan-solar-desk-orange',
           'cat-item-audio-baj-2151',
           'cat-item-fridge-3door-1',
-          'cat-item-fridge-chest-2m',
         ]
           .map((id) => allUploadedProducts.find((item) => item.id === id))
           .filter((item): item is NonNullable<typeof item> => Boolean(item));
@@ -446,7 +472,7 @@ export const HomePage: React.FC = () => {
                   Featured Factory-Direct Stock &amp; Arrivals
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-display font-black uppercase tracking-tight text-brand-midnight">
-                  Cars, Solar Fans, Speakers &amp; Refrigerators
+                  Solar ESS, Security Cameras, Fuel Pumps, Washers, Cars &amp; Appliances
                 </h3>
               </div>
               <Link
@@ -461,11 +487,16 @@ export const HomePage: React.FC = () => {
             {/* Filter Tabs for Featured Uploaded Products */}
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-6">
               {[
-                { key: 'highlights' as FeaturedStockTabKey, label: 'Top Highlights (9)' },
+                { key: 'highlights' as FeaturedStockTabKey, label: 'Top Highlights (12)' },
+                { key: 'solar-ess' as FeaturedStockTabKey, label: 'Solar ESS & Batteries' },
+                { key: 'cameras' as FeaturedStockTabKey, label: 'Solar 4G Cameras' },
+                { key: 'fuel' as FeaturedStockTabKey, label: 'Fuel Dispensers (4)' },
+                { key: 'washers' as FeaturedStockTabKey, label: 'Washing Machines (3)' },
+                { key: 'displays' as FeaturedStockTabKey, label: 'StandByMe Screens' },
                 { key: 'cars' as FeaturedStockTabKey, label: 'Cars & SUVs (4)' },
-                { key: 'fans' as FeaturedStockTabKey, label: 'Solar & Rechargeable Fans (9)' },
-                { key: 'speakers' as FeaturedStockTabKey, label: 'Speakers & Sound (2)' },
-                { key: 'fridges' as FeaturedStockTabKey, label: 'Refrigerators & Freezers (4)' },
+                { key: 'fans' as FeaturedStockTabKey, label: 'Solar Fans (9)' },
+                { key: 'speakers' as FeaturedStockTabKey, label: 'Speakers (2)' },
+                { key: 'fridges' as FeaturedStockTabKey, label: 'Refrigerators (4)' },
                 { key: 'all' as FeaturedStockTabKey, label: `View All Stock (${allUploadedProducts.length})` },
               ].map((tab) => (
                 <button
