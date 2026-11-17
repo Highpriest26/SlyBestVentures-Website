@@ -559,15 +559,6 @@ export const HomePage: React.FC = () => {
                 <span>View All 11 Services</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a
-                href={SITE_CONFIG.contacts.whatsapp.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black uppercase tracking-widest transition-colors"
-              >
-                <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                <span>Chat With Our Team</span>
-              </a>
             </div>
           </div>
 
@@ -598,28 +589,6 @@ export const HomePage: React.FC = () => {
                     <p className="text-sm text-slate-300 font-light leading-relaxed">
                       {srv.description}
                     </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between gap-2">
-                    <Link
-                      to={`/request-a-quote?service=${encodeURIComponent(srv.serviceParam)}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-brand-cyan hover:text-white transition-colors"
-                    >
-                      <span>Request Quote</span>
-                      <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                    </Link>
-
-                    <a
-                      href={`https://wa.me/${SITE_CONFIG.contacts.whatsapp.rawNumber}?text=${encodeURIComponent(
-                        `Hello Slybest, I need assistance with ${srv.title}.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400 hover:text-emerald-300"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
-                      <span>WhatsApp</span>
-                    </a>
                   </div>
                 </div>
               );

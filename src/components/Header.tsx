@@ -140,21 +140,6 @@ export const Header: React.FC = () => {
               </div>
             </nav>
 
-            {/* Mobile Header Menu Button (Replaces WhatsApp & Quote buttons per request) */}
-            <div className="flex lg:hidden items-center">
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen((prev) => !prev)}
-                className="p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan transition-colors"
-                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              >
-                {mobileMenuOpen ? (
-                  <X className="w-6 h-6 text-brand-cyan" aria-hidden="true" />
-                ) : (
-                  <Menu className="w-6 h-6 text-white" aria-hidden="true" />
-                )}
-              </button>
-            </div>
           </div>
         </div>
       </header>
