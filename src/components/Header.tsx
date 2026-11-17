@@ -140,46 +140,20 @@ export const Header: React.FC = () => {
               </div>
             </nav>
 
-            {/* Right CTAs (Desktop & Tablet) */}
-            <div className="hidden md:flex items-center gap-2.5 shrink-0">
-              <a
-                href={SITE_CONFIG.contacts.whatsapp.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+            {/* Mobile Header Menu Button (Replaces WhatsApp & Quote buttons per request) */}
+            <div className="flex lg:hidden items-center">
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan transition-colors"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               >
-                <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>WhatsApp Us</span>
-              </a>
-
-              <Link
-                to={SITE_CONFIG.navigation.primaryCta.path}
-                className="bg-brand-cobalt hover:bg-blue-600 text-white px-5 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
-              >
-                {SITE_CONFIG.navigation.primaryCta.label}
-              </Link>
-            </div>
-
-            {/* Mobile Top Right: Direct WhatsApp + Request Quote (No Top-Right Hamburger Menu) */}
-            <div className="flex md:hidden items-center gap-1.5">
-              <a
-                href={SITE_CONFIG.contacts.whatsapp.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact Us on WhatsApp"
-                className="inline-flex items-center gap-1 px-2.5 py-2 rounded-md text-[11px] font-bold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 transition-colors"
-              >
-                <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>WhatsApp</span>
-              </a>
-
-              <Link
-                to={SITE_CONFIG.navigation.primaryCta.path}
-                onClick={closeMenus}
-                className="inline-flex items-center px-3 py-2 rounded-md text-[11px] font-bold uppercase tracking-wider text-white bg-brand-cobalt hover:bg-blue-600 transition-colors"
-              >
-                Quote
-              </Link>
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6 text-brand-cyan" aria-hidden="true" />
+                ) : (
+                  <Menu className="w-6 h-6 text-white" aria-hidden="true" />
+                )}
+              </button>
             </div>
           </div>
         </div>

@@ -213,13 +213,17 @@ export const Footer: React.FC = () => {
             &copy; {currentYear} {SITE_CONFIG.business.name}. All rights reserved.
           </p>
 
-          <p className="font-raleway text-xs text-slate-400" style={{ fontFamily: "'Raleway', sans-serif" }}>
+          <p
+            className="font-raleway text-xs sm:text-sm text-slate-300 tracking-wider"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
+          >
             Designed by{' '}
             <a
               href="https://www.boffinstechnology.com.ng"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-cyan hover:underline font-semibold transition-colors"
+              className="font-raleway text-brand-cyan hover:text-white underline decoration-brand-cyan/40 hover:decoration-white font-bold transition-colors"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
             >
               Boffins Technology
             </a>
