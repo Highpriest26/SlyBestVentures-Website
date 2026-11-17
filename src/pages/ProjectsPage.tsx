@@ -92,60 +92,49 @@ export const ProjectsPage: React.FC = () => {
             {filteredSlots.map((slot, index) => (
               <article
                 key={slot.id}
-                className="rounded-md bg-white border border-slate-200/90 overflow-hidden flex flex-col justify-between hover:border-brand-cobalt/40 transition-colors"
+                className="group rounded-md bg-white border border-slate-200 hover:border-brand-cobalt overflow-hidden flex flex-col justify-between transition-all shadow-xs hover:shadow-lg"
               >
                 <div>
-                  {/* Renders mediaUrl or previewImageUrl cleanly */}
-                  <div className="h-56 bg-brand-midnight relative p-6 flex flex-col justify-between text-white overflow-hidden">
+                  {/* Clean, unobstructed high-visibility product media view */}
+                  <div className="aspect-[4/3] bg-slate-950 relative overflow-hidden flex items-center justify-center">
                     {slot.mediaUrl && /\.(mp4|webm|ogg)$/i.test(slot.mediaUrl) ? (
                       <video
                         src={slot.mediaUrl}
                         poster={slot.posterUrl || slot.previewImageUrl}
                         controls
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="w-full h-full object-cover"
                       />
                     ) : (
-                      <>
-                        <img
-                          src={slot.mediaUrl || slot.previewImageUrl}
-                          alt={slot.title}
-                          loading="lazy"
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight/85 via-brand-midnight/25 to-transparent" />
-                        <div className="relative z-10 flex items-center justify-between">
-                          <span className="px-2.5 py-1 rounded-md bg-brand-midnight/90 border border-white/15 text-[11px] font-mono text-brand-cyan font-bold">
-                            {slot.stageTag}
-                          </span>
-                          <span className="font-mono text-xs text-white/80 font-bold">
-                            0{index + 1}
-                          </span>
-                        </div>
-                      </>
+                      <img
+                        src={slot.mediaUrl || slot.previewImageUrl}
+                        alt={slot.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     )}
                   </div>
 
-                  <div className="p-6">
-                    <h2 className="text-xl font-display font-bold text-brand-midnight">
+                  {/* Clean, simplified info so the product visual stays prominent */}
+                  <div className="p-5">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-2">
+                      <span className="text-brand-cobalt font-bold uppercase tracking-wider">
+                        {slot.stageTag}
+                      </span>
+                      <span>0{index + 1}</span>
+                    </div>
+                    <h2 className="text-base sm:text-lg font-display font-black text-brand-midnight tracking-tight">
                       {slot.title}
                     </h2>
-                    <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                       {slot.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="font-mono text-slate-400">
-                    {slot.mediaType === 'video' ? 'Video Slot' : 'Photo Slot'}
+                <div className="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                  <span className="font-mono">
+                    {slot.mediaType === 'video' ? 'Live Video Demo' : 'Factory/Shipment Proof'}
                   </span>
-                  <Link
-                    to="/request-a-quote"
-                    className="font-bold text-brand-cobalt hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>Request a Quote</span>
-                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                  </Link>
                 </div>
               </article>
             ))}

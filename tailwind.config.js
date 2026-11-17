@@ -21,6 +21,7 @@ export default {
         sans: ['Manrope', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Manrope', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        raleway: ['Raleway', 'sans-serif'],
       },
       borderRadius: {
         md: '0.375rem',

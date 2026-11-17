@@ -292,11 +292,6 @@ export const HomePage: React.FC = () => {
             transition={{ duration: 0.55 }}
             className="max-w-4xl"
           >
-            {/* Trust Eyebrow */}
-            <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-md bg-white/10 backdrop-blur-xs border border-white/15 text-[11px] sm:text-xs font-bold tracking-widest text-brand-cyan uppercase mb-5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Trusted China-to-Nigeria Sourcing, Procurement &amp; Shipping Partner</span>
-            </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white uppercase tracking-tighter leading-[0.92] mb-5 sm:mb-6">
               Source Directly From Verified Chinese Factories to Your Door in Nigeria.
@@ -377,52 +372,6 @@ export const HomePage: React.FC = () => {
         />
       </section>
 
-      {/* 2. WHY TRUST SLYBEST: 4 CREDIBILITY PILLARS (Presence, Experience, Shipments, Partnerships) */}
-      <section
-        aria-label="Why trust Slybest Ventures Global Hubs"
-        className="bg-brand-softWhite border-b border-slate-200 py-14 sm:py-20"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-10">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cobalt block mb-2">
-                Why Nigerian importers trust us
-              </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-black uppercase tracking-tight text-brand-midnight leading-[0.95]">
-                Real presence in China &amp; Nigeria.
-              </h2>
-            </div>
-            <p className="text-sm sm:text-base text-slate-600 font-light max-w-md">
-              We bridge Chinese factory floors with your warehouse in Nigeria—backed by a physical
-              Lagos office you can visit anytime.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {CREDIBILITY_HIGHLIGHTS.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white border border-slate-200 hover:border-brand-cobalt rounded-md p-6 flex flex-col justify-between shadow-xs transition-all"
-              >
-                <div>
-                  <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-brand-cobalt/10 text-brand-cobalt mb-4">
-                    {item.badge}
-                  </span>
-                  <div className="text-2xl sm:text-3xl font-display font-black text-brand-midnight tracking-tight mb-1.5">
-                    {item.metric}
-                  </div>
-                  <h3 className="text-sm sm:text-base font-bold uppercase tracking-tight text-brand-cobalt mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 3. EASY-TO-FIND PRODUCT CATEGORIES (Electronics, Solar, Appliances, Sound Systems, Auto Parts & All 15) */}
       <section
@@ -452,6 +401,7 @@ export const HomePage: React.FC = () => {
                 <span>Open Full Catalogue</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
+              {/* Ask on WhatsApp button commented out per owner request
               <a
                 href={SITE_CONFIG.contacts.whatsapp.href}
                 target="_blank"
@@ -461,123 +411,15 @@ export const HomePage: React.FC = () => {
                 <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 <span>Ask on WhatsApp</span>
               </a>
+              */}
             </div>
           </div>
 
-          {/* Featured Real Products Showcase: Cars, Solar Fans, Speakers & Refrigerators */}
+          {/* Featured Factory-Direct Stock & Arrivals — commented out per owner request
           <div className="mb-14">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5 pb-4 border-b border-slate-200">
-              <div>
-                <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-brand-amber/20 text-brand-midnight mb-2">
-                  Featured Factory-Direct Stock &amp; Arrivals
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-display font-black uppercase tracking-tight text-brand-midnight">
-                  Solar ESS, Security Cameras, Fuel Pumps, Washers, Cars &amp; Appliances
-                </h3>
-              </div>
-              <Link
-                to="/catalogue"
-                className="text-xs font-black uppercase tracking-widest text-brand-cobalt hover:underline inline-flex items-center gap-1.5"
-              >
-                <span>See All Catalogue Products</span>
-                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-              </Link>
-            </div>
-
-            {/* Filter Tabs for Featured Uploaded Products */}
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-6">
-              {[
-                { key: 'highlights' as FeaturedStockTabKey, label: 'Top Highlights (12)' },
-                { key: 'solar-ess' as FeaturedStockTabKey, label: 'Solar ESS & Batteries' },
-                { key: 'cameras' as FeaturedStockTabKey, label: 'Solar 4G Cameras' },
-                { key: 'fuel' as FeaturedStockTabKey, label: 'Fuel Dispensers (4)' },
-                { key: 'washers' as FeaturedStockTabKey, label: 'Washing Machines (3)' },
-                { key: 'displays' as FeaturedStockTabKey, label: 'StandByMe Screens' },
-                { key: 'cars' as FeaturedStockTabKey, label: 'Cars & SUVs (4)' },
-                { key: 'fans' as FeaturedStockTabKey, label: 'Solar Fans (9)' },
-                { key: 'speakers' as FeaturedStockTabKey, label: 'Speakers (2)' },
-                { key: 'fridges' as FeaturedStockTabKey, label: 'Refrigerators (4)' },
-                { key: 'all' as FeaturedStockTabKey, label: `View All Stock (${allUploadedProducts.length})` },
-              ].map((tab) => (
-                <button
-                  key={tab.key}
-                  type="button"
-                  onClick={() => setStockTab(tab.key)}
-                  className={`shrink-0 px-3.5 py-2 rounded-md text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                    stockTab === tab.key
-                      ? 'bg-brand-midnight text-brand-cyan shadow-xs'
-                      : 'bg-brand-softWhite text-brand-midnight hover:bg-slate-200/70 border border-slate-200'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {featuredProducts.map((item) => (
-                <div
-                  key={item.id}
-                  className="group bg-white border border-slate-200 hover:border-brand-cobalt rounded-md overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
-                >
-                  <div>
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 border-b border-slate-200">
-                      {item.imageUrl && (
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          loading="lazy"
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      )}
-                      <span className="absolute top-3 left-3 text-[10px] font-mono font-bold uppercase tracking-widest bg-brand-midnight/90 text-brand-cyan px-2.5 py-1 rounded-md">
-                        {item.category}
-                      </span>
-                      <span className="absolute bottom-3 right-3 text-[10px] font-mono font-bold uppercase tracking-widest bg-brand-cobalt text-white px-2.5 py-1 rounded-md">
-                        {item.recommendedFreight}
-                      </span>
-                    </div>
-
-                    <div className="p-5">
-                      <h4 className="text-lg font-display font-black uppercase tracking-tight text-brand-midnight group-hover:text-brand-cobalt transition-colors mb-2">
-                        {item.name}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-3">
-                        {item.shortDescription}
-                      </p>
-                      <div className="p-2.5 rounded-md bg-brand-softWhite border border-slate-200/80 text-[11px] text-slate-700 font-mono leading-relaxed">
-                        {item.specificationNote}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="px-5 py-3.5 border-t border-slate-200 bg-brand-softWhite flex items-center justify-between gap-2">
-                    <Link
-                      to={`/request-a-quote?category=${encodeURIComponent(
-                        item.category
-                      )}&product=${encodeURIComponent(item.name)}`}
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-brand-cobalt hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                    >
-                      <span>Request a Quote</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
-                    </Link>
-
-                    <a
-                      href={`https://wa.me/${SITE_CONFIG.contacts.whatsapp.rawNumber}?text=${encodeURIComponent(
-                        `Hello Slybest Ventures Global Hubs, I want to enquire about ordering "${item.name}".`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ... Featured stock section hidden ...
           </div>
+          */}
 
           {/* Mobile-Friendly Quick Filter Tabs for Instant Product Discovery */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8 border-b border-slate-200">
@@ -628,9 +470,6 @@ export const HomePage: React.FC = () => {
                     <div className="absolute top-3 right-3 w-9 h-9 rounded-md bg-white/95 text-brand-cobalt flex items-center justify-center shadow-xs">
                       <CategoryIcon icon={category.icon} className="w-4 h-4" />
                     </div>
-                    <span className="absolute bottom-3 left-3 text-[10px] font-mono uppercase tracking-widest bg-brand-cobalt text-white px-2.5 py-1 rounded-md font-bold">
-                      {category.freightRecommendation}
-                    </span>
                   </div>
 
                   <div className="p-5 sm:p-6">
@@ -653,27 +492,14 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="px-5 sm:px-6 py-4 border-t border-slate-200 bg-white flex items-center justify-between gap-2">
+                <div className="px-5 sm:px-6 py-4 border-t border-slate-200 bg-white">
                   <Link
-                    to={`/request-a-quote?category=${encodeURIComponent(category.name)}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-brand-cobalt hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider transition-colors"
+                    to={`/catalogue?category=${encodeURIComponent(category.name)}`}
+                    className="w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-brand-cobalt hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider transition-colors"
                   >
-                    <span>Source This Product</span>
+                    <span>View Products</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
-
-                  <a
-                    href={`https://wa.me/${SITE_CONFIG.contacts.whatsapp.rawNumber}?text=${encodeURIComponent(
-                      `Hello Slybest Ventures Global Hubs, I want to enquire about sourcing ${category.name} from China to Nigeria.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                    aria-label={`Ask about ${category.name} on WhatsApp`}
-                  >
-                    <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>WhatsApp</span>
-                  </a>
                 </div>
               </div>
             ))}
@@ -954,26 +780,28 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {featuredProofSlots.map((slot) => (
+            {featuredProofSlots.map((slot, index) => (
               <div
                 key={slot.id}
-                className="group rounded-md bg-brand-softWhite border border-slate-200 hover:border-brand-cobalt overflow-hidden flex flex-col justify-between transition-all hover:shadow-lg"
+                className="group rounded-md bg-white border border-slate-200 hover:border-brand-cobalt overflow-hidden flex flex-col justify-between transition-all hover:shadow-lg shadow-xs"
               >
                 <div>
-                  <div className="relative h-52 overflow-hidden bg-brand-midnight">
+                  <div className="aspect-[4/3] overflow-hidden bg-slate-950">
                     <img
                       src={slot.mediaUrl || slot.previewImageUrl}
                       alt={slot.title}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight/80 via-transparent to-transparent" />
-                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-midnight/90 text-brand-cyan font-mono text-[10px] font-bold uppercase tracking-widest border border-white/10">
-                      {slot.stageTag}
-                    </span>
                   </div>
-                  <div className="p-5 sm:p-6">
-                    <h3 className="text-lg font-display font-black uppercase tracking-tight text-brand-midnight mb-2">
+                  <div className="p-5">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-2">
+                      <span className="text-brand-cobalt font-bold uppercase tracking-wider">
+                        {slot.stageTag}
+                      </span>
+                      <span>0{index + 1}</span>
+                    </div>
+                    <h3 className="text-base sm:text-lg font-display font-black uppercase tracking-tight text-brand-midnight mb-1.5">
                       {slot.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">

@@ -108,11 +108,11 @@ export const PROJECT_MEDIA_SLOTS: ProjectMediaSlot[] = [
   },
   {
     id: 'containers-shipped-to-nigeria',
-    title: 'Completed Sea & Air Shipments to Nigeria',
+    title: 'Completed Cargo Shipments to Nigeria',
     mediaType: 'photo',
-    stageTag: 'SEA & AIR FREIGHT',
+    stageTag: 'CARGO SHIPMENT',
     description:
-      'Full container loads (FCL), consolidated LCL sea freight, and priority air cargo shipments moving from China ports to Lagos.',
+      'Full container loads (FCL), consolidated groupage, and cargo shipments moving from China ports to Lagos.',
     previewImageUrl:
       'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=900&q=80',
     mediaUrl:

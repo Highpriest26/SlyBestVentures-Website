@@ -248,7 +248,7 @@ export const CataloguePage: React.FC = () => {
                   >
                     <div>
                       {/* High-Res Visual Header */}
-                      <div className="h-52 relative overflow-hidden bg-brand-midnight">
+                      <div className="aspect-[4/3] sm:aspect-[16/11] relative overflow-hidden bg-slate-900">
                         {item.imageUrl && (
                           <img
                             src={item.imageUrl}
@@ -257,20 +257,12 @@ export const CataloguePage: React.FC = () => {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight/90 via-brand-midnight/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight/40 via-transparent to-transparent pointer-events-none" />
 
                         <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2">
                           <span className="px-3 py-1 rounded-md bg-brand-midnight/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-brand-cyan truncate">
                             {item.category}
                           </span>
-                          <span className="px-2.5 py-1 rounded-md bg-brand-amber/90 text-brand-midnight font-mono text-[10px] font-extrabold shrink-0">
-                            {item.approvedPrice ? item.approvedPrice : 'Quote-Based'}
-                          </span>
-                        </div>
-
-                        <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                          <span>{item.recommendedFreight}</span>
-                          <span>CN &rarr; NG</span>
                         </div>
                       </div>
 
@@ -283,29 +275,6 @@ export const CataloguePage: React.FC = () => {
                           {item.shortDescription}
                         </p>
                       </div>
-                    </div>
-
-                    {/* Sleek Dual Action Buttons */}
-                    <div className="px-6 pb-6 flex items-center gap-2.5">
-                      <Link
-                        to={`/request-a-quote?category=${encodeURIComponent(
-                          item.category
-                        )}&product=${encodeURIComponent(item.name)}`}
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-md text-xs font-bold text-white bg-brand-cobalt hover:bg-blue-600 transition-colors"
-                      >
-                        <span>Request a Quote</span>
-                        <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                      </Link>
-
-                      <a
-                        href={buildWhatsAppProductHref(item.name, item.category)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-md text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                        <span>Ask on WhatsApp</span>
-                      </a>
                     </div>
                   </article>
                 ))}
@@ -333,9 +302,7 @@ export const CataloguePage: React.FC = () => {
                     <div className="w-11 h-11 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-brand-cyan flex items-center justify-center">
                       <CategoryIcon icon={category.icon} className="w-5 h-5" />
                     </div>
-                    <span className="px-3 py-1 rounded-md bg-brand-midnight/80 border border-white/15 text-[11px] font-mono text-slate-200">
-                      {category.freightRecommendation}
-                    </span>
+                    
                   </div>
 
                   <div className="relative z-10 mt-auto pt-10">
@@ -346,22 +313,11 @@ export const CataloguePage: React.FC = () => {
                       {category.shortDescription}
                     </p>
 
-                    <div className="mt-4 pt-3 border-t border-white/15 flex items-center gap-2">
-                      <Link
-                        to={`/request-a-quote?category=${encodeURIComponent(category.name)}`}
-                        className="flex-1 text-center py-2 rounded-md bg-brand-cobalt hover:bg-blue-500 text-xs font-bold text-white transition-colors"
-                      >
-                        Request a Quote
-                      </Link>
-                      <a
-                        href={buildWhatsAppProductHref(category.name, category.name)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3.5 py-2 rounded-md bg-white/15 hover:bg-emerald-600 text-xs font-bold text-white inline-flex items-center gap-1 transition-colors"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5" />
-                        <span>WhatsApp</span>
-                      </a>
+                    <div className="mt-4 pt-3 border-t border-white/15">
+                      <span className="text-xs font-bold text-brand-cyan group-hover:underline inline-flex items-center gap-1.5">
+                        <span>Browse Items</span>
+                        <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      </span>
                     </div>
                   </div>
                 </div>

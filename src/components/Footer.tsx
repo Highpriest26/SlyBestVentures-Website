@@ -208,10 +208,23 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright & Legal Bar */}
-        <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
             &copy; {currentYear} {SITE_CONFIG.business.name}. All rights reserved.
           </p>
+
+          <p className="font-raleway text-xs text-slate-400" style={{ fontFamily: "'Raleway', sans-serif" }}>
+            Designed by{' '}
+            <a
+              href="https://www.boffinstechnology.com.ng"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-cyan hover:underline font-semibold transition-colors"
+            >
+              Boffins Technology
+            </a>
+          </p>
+
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-slate-300 transition-colors">
               Privacy Policy
